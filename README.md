@@ -1,3 +1,10 @@
 ## USELESS SCRIPTS
-#### 1fichier-stream
-#### kimsufi-checker
+#### HOW TO CREATE BIN
+```
+python -m PyInstaller main.py
+```
+
+#### Update desktops
+```
+sudo update-desktop-database
+```

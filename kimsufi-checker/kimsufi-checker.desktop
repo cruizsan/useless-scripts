@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Kimsufi-Checker
+Exec=/home/cruizsan/PycharmProjects/useless-scripts/kimsufi-checker/dist/main/main
+Icon=/home/cruizsan/PycharmProjects/useless-scripts/kimsufi-checker/kimsufi-logo.png
+Terminal=false
+Type=Application
