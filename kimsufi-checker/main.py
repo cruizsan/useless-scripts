@@ -6,7 +6,7 @@ import requests
 import webbrowser
 import time
 import threading
-from pystray import Icon as icon, Menu as menu, MenuItem as item
+from pystray import Icon, Menu, MenuItem
 
 
 def on_exit_systray():
@@ -29,9 +29,9 @@ WEBSITE = "https://eco.ovhcloud.com/fr-ca/kimsufi/ks-a/"
 DELAY = 60 * 5  # 5 min
 
 if __name__ == "__main__":
-    systray = icon('kimsufi-checker', icon="kimsufi-logo.png", menu=menu(
-        item('Kimsufi-Checker', enabled=False, action=None),
-        item('exit', on_exit_systray))).run()
+    systray = Icon('kimsufi-checker', icon="kimsufi-logo.png", menu=Menu(
+        MenuItem('Kimsufi-Checker', enabled=False, action=None),
+        MenuItem('exit', on_exit_systray))).run()
     # Run the icon mainloop in a separate thread
     threading.Thread(target=systray.run).start()
     while True:
