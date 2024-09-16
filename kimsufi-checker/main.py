@@ -25,13 +25,14 @@ def is_24ksa01_available(url):
 
 
 JSON_URL = "https://ca.ovh.com/engine/apiv6/dedicated/server/datacenter/availabilities/?excludeDatacenters=false&planCode=24ska01&server=24ska01"
+# JSON_URL = "https://ca.ovh.com/engine/apiv6/dedicated/server/datacenter/availabilities/?excludeDatacenters=false&planCode=24sk10&server=24sk10"
 WEBSITE = "https://eco.ovhcloud.com/fr-ca/kimsufi/ks-a/"
 DELAY = 60 * 5  # 5 min
 
 if __name__ == "__main__":
     systray = Icon('kimsufi-checker', icon="kimsufi-logo.png", menu=Menu(
         MenuItem('Kimsufi-Checker', enabled=False, action=None),
-        MenuItem('exit', on_exit_systray))).run()
+        MenuItem('exit', on_exit_systray)))
     # Run the icon mainloop in a separate thread
     threading.Thread(target=systray.run).start()
     while True:
@@ -41,3 +42,4 @@ if __name__ == "__main__":
             break
         print("not found ...")
         time.sleep(DELAY)
+    systray.stop()
